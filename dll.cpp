@@ -1,4 +1,4 @@
-#include "./stdc++.h";
+#include "./stdc++.h"
 using namespace std;
 class Node
 {
@@ -37,7 +37,6 @@ void print(Node *head)
         temp = temp->next;
     }
 }
-
 Node *deleteHead(Node *head)
 {
     // head->next = next and head->back = nullptr
@@ -69,7 +68,6 @@ Node *deleteTail(Node *head)
     free(tail);
     return head;
 }
-
 Node *deleteKthElement(Node *head, int k)
 {
     if (head == NULL)
@@ -112,12 +110,64 @@ Node *deleteKthElement(Node *head, int k)
 
     return head;
 }
+Node *insertBeforeHead(Node *head, int data)
+{
+    Node *newHead = new Node(data, head, nullptr);
+    head->prev = newHead;
+    return newHead;
+}
+Node *insertBeforeTail(Node *head, int data)
+{
+    if (head->next == NULL)
+        insertBeforeHead(head, data);
+    Node *tail = head;
+    while (tail->next != NULL)
+    {
+        tail = tail->next;
+    }
+    Node *prev = tail->prev;
+    Node *newNode = new Node(data, tail, prev);
+    prev->next = newNode;
+    tail->prev = newNode;
+    return head;
+}
+Node *insertBeforeKthElement(Node *head, int data, int k)
+{
+    // if there is only one element
+    if (k == 1)
+        insertBeforeHead(head, data);
+    int count = 0;
+    // let the current  element is head
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        count++;
+        if (count == k)
+            break;
+        temp = temp->next;
+    }
+    // now the temp pointing to the k th element
+    Node *prev = temp->prev;
 
+    Node *newNode = new Node(data, temp, prev);
+    prev->next = newNode;
+    temp->prev = newNode;
+
+    return head;
+};
+void *insertBeforeNode(Node *node, int data)
+{
+    Node *prev = node->prev;
+    Node *newNode = new Node(data, node, prev);
+    prev->next = newNode;
+    node->prev = newNode;
+    return newNode;
+}
 int main()
 {
     vector<int> array = {1, 2, 3, 4, 5, 6};
-    Node *temp = convertToDLL(array);
-    Node *head = deleteKthElement(temp, 2);
+    Node *head = convertToDLL(array);
+    insertBeforeNode(head->next, 99);
     print(head);
     return 0;
 }
