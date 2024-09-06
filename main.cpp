@@ -1,34 +1,18 @@
-// linked list
-#include "./lib/stdc++.h"
+#include "./headers/stdc++.h";
 using namespace std;
-
-class Node
-{
-public:
-    int data;
-    Node *next;
-
-public:
-    Node(int data1, Node *next1)
-    {
-        this->data = data1;
-        this->next = next1;
-    }
-};
-
-Node *converToLinklist(vector<int> arr)
-{
-
-    Node *head = new Node(arr[0], nullptr);
-    Node *mover = head;
-
-    for (int i = 1; i < arr.size(); i++)
-    {
-        Node *temp = new Node(arr[i], nullptr);
-        mover->next = temp;
-        mover = temp;
-    }
-    return head;
+// f(n) -> f(n-1) + f(n-2)
+// 2451637
+int fibo(int n){
+  if(n<=1)
+    return n;
+  return fibo(n - 1) + fibo(n - 2);
+}
+// memoziation - we need to store the sub problen 
+// for not more computation 
+int main(){
+  int a = fibo(4);
+  cout << a;
+  return 0;
 }
 
 int search(Node *head,int number){
