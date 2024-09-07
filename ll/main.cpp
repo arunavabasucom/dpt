@@ -1,33 +1,13 @@
-#include "./ll.h";
-#include "../headers/stdc++.h";
-
+#include "../headers/ln.h";
+#include "../headers/lnu.h";
 using namespace std;
 
-ListNode *modifiedList(vector<int> &nums, ListNode *head){
-    unordered_set<int> s;
-    for(int num: nums){
-        s.insert(num);
-    }
-    // point to a proper head 
-    while(head && s.count(head->val)){
-        ListNode *dn = head;
-        head = head->next;
-        delete (head);
-    }
-    ListNode *curr = head;
-    while(curr){
-        if(curr && s.count(curr->next->val)){
-            ListNode *dn = curr->next;
-            curr->next = curr->next->next;
-            delete (dn);
-        }else{
-            curr = curr->next;
-        }
-    }
-
-    return head;
-}
 int main(){
-    
+    vector<int> nums = {1, 3};
+    vector<int> head_nums = {1, 2, 3, 4, 5};
+    ListNode *t_head = arrayToList(head_nums);
+    ListNode* head = modifiedList(nums, t_head);
+    printList(head);
+
     return 0;
 }
