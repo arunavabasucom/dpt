@@ -3,7 +3,7 @@ CXX = clang++
 # Compiler flags
 CXXFLAGS = -Wall -std=c++11
 # Source files
-SRC = main.cpp ./utils/lnu.cpp 3217.cpp
+SRC = ./dp/frog_jump_k.cpp
 # Object files (generated from source files)
 OBJ = $(SRC:.cpp=.o)
 OBJ_DIR = obj
@@ -28,3 +28,5 @@ $(OBJ_DIR)/%.o: %.cpp
 clean:
 	rm -f $(OBJ_FILES) $(EXEC)
 	rmdir -p $(OBJ_DIR)
+lint: 
+	clang-format -i $(SRC)

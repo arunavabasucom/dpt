@@ -1,6 +1,5 @@
-#include "../headers/ln.h";
-#include "../headers/lnu.h";
-#include "../headers/stdc++.h";
+#include "../headers/ll.h";
+
 using namespace std;
 
 ListNode *modifiedList(vector<int> &nums, ListNode *head) {
@@ -25,4 +24,8 @@ ListNode *modifiedList(vector<int> &nums, ListNode *head) {
     }
   }
   return head;
+}
+int main(){
+    
+    return 0;
 }

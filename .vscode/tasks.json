@@ -9,6 +9,7 @@
                 "-fansi-escape-codes",
                 "-g",
                 "${file}",
+                "${workspaceFolder}/ll/__lnu.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
             ],
