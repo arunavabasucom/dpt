@@ -23,4 +23,7 @@ int minimizeCost(vector<int> &arr, int &k) {
   return check(arr, arr.size() - 1, dparr, k);
 }
 
-int main() { return 0; }
+int main() {
+    minimizeCost({10, 30, 40, 50, 20}, 3);
+    return 0;
+}

@@ -1,32 +1,32 @@
-# Compiler
-CXX = clang++
-# Compiler flags
+# Compiler and compiler flags
+CXX = g++
 CXXFLAGS = -Wall -std=c++11
+
 # Source files
-SRC = ./dp/frog_jump_k.cpp
-# Object files (generated from source files)
-OBJ = $(SRC:.cpp=.o)
-OBJ_DIR = obj
-OBJ_FILES = $(patsubst %.cpp, $(OBJ_DIR)/%.o, $(SRC))
+SRCS = ./dp/198.cpp
+
+# Object files (automatically generated from .cpp files)
+OBJS = $(SRCS:.cpp=.o)
 
 # Executable name
-EXEC = my_program
+EXEC = a.out
 
-# Default rule to build the executable
-all: $(EXEC)
+# Rule to build the executable
+$(EXEC): $(OBJS)
+	$(CXX) $(OBJS) -o $(EXEC)
 
-# Rule to link object files and create the executable
-$(EXEC): $(OBJ_FILES)
-	$(CXX) $(OBJ_FILES) -o $(EXEC)
-
-# Rule to compile .cpp files into .o files
-$(OBJ_DIR)/%.o: %.cpp
-	mkdir -p $(OBJ_DIR)
+# Rule to build object files from source files
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Clean rule to remove object files and the executable
+# Rule to run the executable
+run: $(EXEC)
+	./$(EXEC)
+
+# Rule to clean up build artifacts
 clean:
-	rm -f $(OBJ_FILES) $(EXEC)
-	rmdir -p $(OBJ_DIR)
+	rm -f $(OBJS) $(EXEC)
+
+
 lint: 
-	clang-format -i $(SRC)
+	clang-format -i $(SRCS)
