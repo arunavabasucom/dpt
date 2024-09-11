@@ -26,7 +26,7 @@ int rob(vector<int> &nums) {
   int n = nums.size();
   vector<int> dparr(n, -1);
   int prev = nums[0];
-  int prev2 = 0;
+  int prev2 = nums[n-1];
   for (int i = 1; i < n; i++) {
     int curr = nums[i];
     int notPick = prev;

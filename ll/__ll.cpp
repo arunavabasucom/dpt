@@ -1,4 +1,4 @@
-// linkedlist utility functions 
+// linkedlist utility functions
 #include "../headers/ll.h";
 
 // Converts an array to a linked list

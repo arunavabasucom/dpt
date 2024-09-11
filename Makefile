@@ -3,13 +3,16 @@ CXX = g++
 CXXFLAGS = -Wall -std=c++11
 
 # Source files
-SRCS = ./dp/198.cpp
+SRCS = dp/213.cpp
 
 # Object files (automatically generated from .cpp files)
 OBJS = $(SRCS:.cpp=.o)
 
 # Executable name
 EXEC = a.out
+
+# Default rule (first target)
+default: run
 
 # Rule to build the executable
 $(EXEC): $(OBJS)
@@ -27,6 +30,6 @@ run: $(EXEC)
 clean:
 	rm -f $(OBJS) $(EXEC)
 
-
+# Rule to format the code
 lint: 
 	clang-format -i $(SRCS)
