@@ -17,5 +17,4 @@ struct ListNode {
 void __llprint(ListNode *head);
 void __lldelete(ListNode *head);
 int __llgetLength(ListNode *head);
-ListNode *_llarrayToList(const vector<int> &arr);
-
+ListNode *__llarrayToList(const vector<int> &arr);

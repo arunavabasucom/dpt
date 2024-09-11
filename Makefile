@@ -1,9 +1,9 @@
 # Compiler and compiler flags
-CXX = g++
-CXXFLAGS = -Wall -std=c++11
+CXX = clang++
+CXXFLAGS = -Wall -std=c++11 
 
 # Source files
-SRCS = dp/213.cpp
+SRCS = sw/1493.cpp
 
 # Object files (automatically generated from .cpp files)
 OBJS = $(SRCS:.cpp=.o)
@@ -20,7 +20,7 @@ $(EXEC): $(OBJS)
 
 # Rule to build object files from source files
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS)  $< -o $@
 
 # Rule to run the executable
 run: $(EXEC)

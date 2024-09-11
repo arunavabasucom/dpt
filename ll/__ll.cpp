@@ -2,7 +2,8 @@
 #include "../headers/ll.h";
 
 // Converts an array to a linked list
-ListNode *_llarrayToList(const std::vector<int> &arr) {
+ListNode *__llarrayToList(const std::vector<int> &arr)
+{
   if (arr.empty())
     return nullptr;
 

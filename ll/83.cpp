@@ -24,7 +24,8 @@ ListNode *deleteDuplicates(ListNode *head) {
 
 int main() {
   vector<int> arr = {1, 2, 2, 3};
-  ListNode *temphead = _llarrayToList(arr);
+
+  ListNode *temphead = __llarrayToList(arr);
   ListNode *head = deleteDuplicates(temphead);
   __llprint(head);
   return 0;
