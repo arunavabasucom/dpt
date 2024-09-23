@@ -3,7 +3,7 @@ CXX = clang++
 CXXFLAGS = -Wall -std=c++11
 
 # Source files
-SRCS = bitm/191.cpp
+SRCS = st/2707.cpp
 # Object files (automatically generated from .cpp files)
 OBJS = $(SRCS:.cpp=.o)
 
