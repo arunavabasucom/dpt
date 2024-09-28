@@ -1,4 +1,4 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 // Brute force
 // bool isPalindrome(int l,int r,string s){
@@ -25,26 +25,28 @@ using namespace std;
 // }
 
 // Robin Karp Optimal
-string shortestPalindrome(string s){
-    int base = 29, lastInd = 0,power = 1,  prefix = 0, suffix = 0;
+string shortestPalindrome(string s)
+{
+    int base = 29, lastInd = 0, power = 1, prefix = 0, suffix = 0;
     long long mod = 10e7 + 7;
-    for (int i = 0; i < s.size(); i++){
-        long long  c  = (s[i] - 'a')+1; //get the value for that char
-        prefix = (prefix * base+c)%mod;
+    for (int i = 0; i < s.size(); i++)
+    {
+        long long c = (s[i] - 'a') + 1; // get the value for that char
+        prefix = (prefix * base + c) % mod;
 
+        suffix = (suffix + c * power) % mod;
+        power = (power * base) % mod;
 
-        suffix = (suffix + c * power)%mod;        
-        power = (power * base)%mod;
-
-        if(prefix ==  suffix)
+        if (prefix == suffix)
             lastInd = i;
     }
 
     string suf = s.substr(lastInd + 1);
     return suf + s;
 }
-int main(){
+int main()
+{
     string s = "abcd";
-    cout<<shortestPalindrome(s);
+    cout << shortestPalindrome(s);
     return 0;
 }

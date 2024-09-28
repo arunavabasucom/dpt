@@ -1,4 +1,4 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 
 /*
@@ -13,14 +13,17 @@ f(0)->10
 
 */
 
-int helper(int n, vector<int> &cost, vector<int> &dp) {
+int helper(int n, vector<int> &cost, vector<int> &dp)
+{
   // 0 1 ..
 
-  if (n <= 1) {
+  if (n <= 1)
+  {
     return cost[n];
   }
 
-  if (dp[n] != -1) {
+  if (dp[n] != -1)
+  {
     return dp[n];
   }
   int os = helper(n - 1, cost, dp);
@@ -29,12 +32,14 @@ int helper(int n, vector<int> &cost, vector<int> &dp) {
   return dp[n] = cost[n] + min(os, ts);
 }
 
-int minCostClimbingStairs(vector<int> &cost) {
+int minCostClimbingStairs(vector<int> &cost)
+{
   int n = cost.size();
   vector<int> dp(n + 1, -1);
   return min(helper(n - 1, cost, dp), helper(n - 2, cost, dp));
 }
-int main() {
+int main()
+{
   vector<int> arr = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
   cout << minCostClimbingStairs(arr);
   return 0;

@@ -2,9 +2,8 @@
 #include "headers/stdc++.h"
 using namespace std;
 
-
 int main() {
   vector<string> arr = {"Hello", "World"};
-  __veprint(arr); 
+  __veprint(arr);
   return 0;
 }

@@ -1,9 +1,8 @@
 // linkedlist utility functions
-#include "../headers/ll.h";
-
+#include <ll.h>
+using namespace std;
 // Converts an array to a linked list
-ListNode *__llarrayToList(const std::vector<int> &arr)
-{
+ListNode *__llarrayToList(vector<int> &arr) {
   if (arr.empty())
     return nullptr;
 
@@ -22,10 +21,10 @@ ListNode *__llarrayToList(const std::vector<int> &arr)
 void __llprint(ListNode *head) {
   ListNode *curr = head;
   while (curr != nullptr) {
-    std::cout << curr->val << " -> ";
+    cout << curr->val << " -> ";
     curr = curr->next;
   }
-  std::cout << "nullptr" << std::endl;
+  cout << "nullptr" << endl;
 }
 
 // Deletes the linked list to free memory

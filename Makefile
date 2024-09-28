@@ -1,9 +1,9 @@
-# Compiler and compiler flags
+#Compiler and compiler flags
 CXX = clang++
-CXXFLAGS = -Wall -std=c++11
+CXXFLAGS = -Wall -std=c++17 -Iheaders
 
-# Source files
-SRCS = st/2707.cpp
+#Source files
+SRCS =  $(wildcard utils/*.cpp) prac.cpp
 # Object files (automatically generated from .cpp files)
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,4 +1,4 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 // f(n) -> f(n-1) + f(n-2)
 // 2451637
@@ -9,17 +9,19 @@ using namespace std;
 // }
 // memoziation - we need to store the sub problen
 // for not more computation
-// DP 
+// DP
 // TC - O(N)
 // SC - O(N)->stack space + O(N) -> array
-int fiboDP(int n,vector<int> &dparr){ 
-    if(n<=1)
+int fiboDP(int n, vector<int> &dparr)
+{
+    if (n <= 1)
         return n;
     // if the already computed then just get that
-    if(dparr[n] != -1){
+    if (dparr[n] != -1)
+    {
         return dparr[n];
     }
-    return dparr[n]= fiboDP(n - 1, dparr) + fiboDP(n - 2, dparr);
+    return dparr[n] = fiboDP(n - 1, dparr) + fiboDP(n - 2, dparr);
 }
 
 // Tabulation
@@ -31,14 +33,14 @@ int fiboDP(int n,vector<int> &dparr){
 // for (int i = 2; i< len; i++){
 //  dp[i] = dp[i-1] + dp[i-2];
 //}
-// Removing also the space 
+// Removing also the space
 // i
 
-
-int main(){
+int main()
+{
 
     int n = 4;
-    
+
     vector<int> dparr(n + 1, -1);
     cout << fiboDP(n, dparr);
     // TC - O(N) NOT TAKING EXTRA SPACE
@@ -49,5 +51,5 @@ int main(){
     //     prev2 = prev;
     //     prev = curr;
     // }
-        return 0;
+    return 0;
 }

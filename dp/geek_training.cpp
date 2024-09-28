@@ -1,4 +1,4 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 
 //=================================================================//
@@ -75,7 +75,8 @@ using namespace std;
 //                         TABULATION
 //=================================================================//
 
-int maximumPoints(vector<vector<int>> &arr, int n) {
+int maximumPoints(vector<vector<int>> &arr, int n)
+{
   vector<vector<int>> dparr(n,
                             vector<int>(4, 0)); // n - days 4 - taks s (0 1 2 3)
   dparr[0][0] = max(arr[0][1], arr[0][2]);
@@ -83,11 +84,15 @@ int maximumPoints(vector<vector<int>> &arr, int n) {
   dparr[0][2] = max(arr[0][1], arr[0][0]);
   dparr[0][3] = max(arr[0][1], arr[0][1], arr[0][2]);
 
-  for (int day = 1; day < n; day++) {
-    for (int last = 0; last < 4; last++) {
+  for (int day = 1; day < n; day++)
+  {
+    for (int last = 0; last < 4; last++)
+    {
       dparr[day][last] = 0;
-      for (int task = 0; task < 3; task++) {
-        if (task != last) {
+      for (int task = 0; task < 3; task++)
+      {
+        if (task != last)
+        {
           int points = arr[day][task] + dparr[day - 1][task];
           dparr[day][last] = max(dparr[day][last], points);
         }
@@ -97,7 +102,8 @@ int maximumPoints(vector<vector<int>> &arr, int n) {
   return dparr[n - 1][3];
 }
 
-int main() {
+int main()
+{
   vector<vector<int>> arr = {{1, 2, 5}, {3, 1, 1}, {3, 3, 3}};
   cout << maximumPoints(arr, 3);
   return 0;

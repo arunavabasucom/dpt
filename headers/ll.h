@@ -1,6 +1,6 @@
 // linked list
 #pragma once
-#include "stdc++.h"
+#include <stdc++.h>
 
 using namespace std;
 // Definition for singly-linked list node.
@@ -17,4 +17,4 @@ struct ListNode {
 void __llprint(ListNode *head);
 void __lldelete(ListNode *head);
 int __llgetLength(ListNode *head);
-ListNode *__llarrayToList(const vector<int> &arr);
+ListNode *__llarrayToList(vector<int> &arr);

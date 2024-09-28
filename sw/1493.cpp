@@ -1,12 +1,15 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
-int longestSubarray(vector<int> &nums) {
+int longestSubarray(vector<int> &nums)
+{
 
   int l = 0, r = 0, maxlen = 0, ele = 0, n = nums.size();
-  while (r < n) {
+  while (r < n)
+  {
     if (nums[r] != 1)
       ele++;
-    while (ele > 1) {
+    while (ele > 1)
+    {
       if (nums[l] != 1)
         ele--;
       l++;
@@ -15,7 +18,8 @@ int longestSubarray(vector<int> &nums) {
     maxlen = max(maxlen, r - l + 1);
     r++;
   }
-  if (ele == 0) {
+  if (ele == 0)
+  {
     ele = 1;
   }
   return maxlen - ele;

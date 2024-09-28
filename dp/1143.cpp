@@ -1,4 +1,4 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 // subsequence of 3 length array is 2^3
 // TC - O(N*M)
@@ -26,10 +26,11 @@ int longestCommonSubsequence(string text1, string text2) {
   return helper(t1len - 1, t2len - 1, text1, text2, dp);
 }
 */
-int longestCommonSubsequence(string text1, string text2){
-
+int longestCommonSubsequence(string text1, string text2)
+{
 }
-int main() {
+int main()
+{
   cout << longestCommonSubsequence("abcde", "ace");
   return 0;
 }

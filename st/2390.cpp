@@ -1,29 +1,37 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
-string removeStars(string s){
+string removeStars(string s)
+{
     stack<char> st;
     string ans;
     // iterate
-    for(char c:s){
-        if(st.empty()){
+    for (char c : s)
+    {
+        if (st.empty())
+        {
             st.push(c);
         }
-        else if(st.top() != st.empty() && c == '*'){
+        else if (st.top() != st.empty() && c == '*')
+        {
             st.pop();
-        }else{
+        }
+        else
+        {
 
-        st.push(c);
+            st.push(c);
         }
     }
-    while(!st.empty()){
+    while (!st.empty())
+    {
         ans += st.top();
         st.pop();
     }
     reverse(ans.begin(), ans.end());
     return ans;
 }
-int main(){
-    string s = "leet**cod*e"; //lecoe
-    cout<<removeStars(s);
+int main()
+{
+    string s = "leet**cod*e"; // lecoe
+    cout << removeStars(s);
     return 0;
 }

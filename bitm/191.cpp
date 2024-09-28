@@ -1,16 +1,18 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
-int hammingWeight(int n){
+int hammingWeight(int n)
+{
     int count = 0;
-    while(n){
-        if(n & 1)
+    while (n)
+    {
+        if (n & 1)
             count++;
         n = n >> 1;
     }
     return count;
-
 }
-int main(){
+int main()
+{
     cout << hammingWeight(2147483645);
     return 0;
 }

@@ -1,6 +1,6 @@
-#include "./bt.h";
-#include "../ll/ll.h";
-#include "../headers/stdc++.h";
+#include <bt.h>
+#include <ll.h>
+#include <stdc++.h>
 using namespace std;
 // TC - O(N*M) N-no.of nodes, M - LL length
 // SC - O(M+N)

@@ -1,4 +1,4 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 // ith row - i+1 element
 // 0-1, 1-2
@@ -56,16 +56,20 @@ int minimumTotal(vector<vector<int>> &triangle){
 // SC - O(N)
 //=================================================================//
 
-int minimumTotal(vector<vector<int>> &triangle) {
+int minimumTotal(vector<vector<int>> &triangle)
+{
   int n = triangle.size();
   vector<int> front(n);
   // BASE CASE
-  for (int j = 0; j < n; j++) {
+  for (int j = 0; j < n; j++)
+  {
     front[j] = triangle[n - 1][j];
   }
-  for (int i = n - 2; i >= 0; i--) {
+  for (int i = n - 2; i >= 0; i--)
+  {
     vector<int> curr(n);
-    for (int j = i; j >= 0; j--) {
+    for (int j = i; j >= 0; j--)
+    {
       int d = triangle[i][j] + front[j];
       int dg = triangle[i][j] + front[j + 1];
       curr[j] = min(d, dg);
@@ -74,7 +78,8 @@ int minimumTotal(vector<vector<int>> &triangle) {
   }
   return front[0];
 }
-int main() {
+int main()
+{
   vector<vector<int>> arr = {{2}, {3, 4}, {6, 5, 7}, {4, 1, 8, 3}};
   cout << minimumTotal(arr);
   return 0;

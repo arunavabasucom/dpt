@@ -1,4 +1,4 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 // TC - O(N3)
 /*
@@ -20,16 +20,20 @@ int equalPairs(vector<vector<int>> &grid) {
 }
 */
 // TC - O(N2)
-int equalPairs(vector<vector<int>> &grid) {
+int equalPairs(vector<vector<int>> &grid)
+{
   int m = grid.size(), n = grid[0].size(), count = 0;
   map<vector<int>, int> mp;
-  for (int i = 0; i < m; i++) {
+  for (int i = 0; i < m; i++)
+  {
     mp[grid[i]]++;
   }
-  for (int i = 0; i < n; i++) {
+  for (int i = 0; i < n; i++)
+  {
     vector<int> arr;
     // i = column;
-    for (int j = 0; j < m; j++) {
+    for (int j = 0; j < m; j++)
+    {
 
       arr.push_back(grid[j][i]);
     }
@@ -38,7 +42,8 @@ int equalPairs(vector<vector<int>> &grid) {
   return count;
 }
 
-int main() {
+int main()
+{
   vector<vector<int>> arr = {
       {3, 1, 2, 2}, {1, 4, 4, 5}, {2, 4, 2, 2}, {2, 4, 2, 2}};
   ;

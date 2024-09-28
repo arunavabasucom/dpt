@@ -1,5 +1,5 @@
 // https://www.geeksforgeeks.org/problems/geek-jump/1
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
 
 // MEMOSIZD
@@ -39,16 +39,19 @@ using namespace std;
 // }
 
 // SPACE OPTIMISED
-int minimumEnergy(vector<int> &height, int n) {
+int minimumEnergy(vector<int> &height, int n)
+{
   vector<int> dp(n, -1);
   int prev2 = 0;
   int prev = 0;
   int curr = INT_MAX;
   // left
-  for (int i = 1; i < n; i++) {
+  for (int i = 1; i < n; i++)
+  {
     int left = prev + abs(height[i] - height[i - 1]);
     int right = INT_MAX;
-    if (i > 1) {
+    if (i > 1)
+    {
       right = prev2 + abs(height[i] - height[i - 2]);
     }
     curr = min(left, right);
@@ -58,7 +61,8 @@ int minimumEnergy(vector<int> &height, int n) {
   return prev;
 }
 
-int main() {
+int main()
+{
   vector<int> height = {10, 20, 30, 10};
   int n = 4;
   cout << minimumEnergy(height, n);

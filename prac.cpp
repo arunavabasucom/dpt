@@ -1,8 +1,18 @@
-#include "headers/stdc++.h";
-using namespace std;
+#include <arr.h> // Include your header file
 
-int main(){
-  int a = 0 ^ 1;
-  cout << a;
+int main()
+{
+  // vector<int> arr = {1, 2, 3, 4};
+  // __veprint(arr); // Print 1D vector
+
+  vector<int> arr = {1, 2, 3, 4};
+
+  __veprint(arr); // Print 1D vector
+  vector<vector<int>> matrix = {
+      {1, 2, 3},
+      {4, 5, 6},
+      {7, 8, 9}};
+  __veprint2D(matrix); // Print 2D vector
+
   return 0;
 }

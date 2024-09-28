@@ -1,8 +1,10 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
-int largestAltitude(vector<int> &gain) {
+int largestAltitude(vector<int> &gain)
+{
   int maxi = 0, n = gain.size(), last = 0;
-  for (int num : gain) {
+  for (int num : gain)
+  {
     last += num;
     maxi = max(maxi, last);
   }

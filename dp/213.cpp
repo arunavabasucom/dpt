@@ -1,15 +1,18 @@
-#include "../headers/stdc++.h";
+#include <stdc++.h>
 using namespace std;
-int check(vector<int> nums) {
+int check(vector<int> nums)
+{
   int n = nums.size();
   vector<int> dparr(n, -1);
   int prev = nums[0];
   int prev2 = 0;
   cout << prev2;
-  for (int i = 1; i < n; i++) {
+  for (int i = 1; i < n; i++)
+  {
     int curr = nums[i];
     int notPick = prev;
-    if (n - i >= 0) {
+    if (n - i >= 0)
+    {
       curr += prev2;
     }
     int res = max(curr, notPick);
@@ -19,8 +22,10 @@ int check(vector<int> nums) {
   return prev;
 }
 
-int rob(vector<int> &nums) {
-  if (nums.size() <= 1) {
+int rob(vector<int> &nums)
+{
+  if (nums.size() <= 1)
+  {
     return check(nums);
   }
   vector<int> nums1 = nums;
