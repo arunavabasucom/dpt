@@ -1,15 +1,14 @@
 #Compiler and compiler flags
-CXX = clang++
+CXX = g++
 CXXFLAGS = -Wall -std=c++17 -Iheaders
 
 #Source files
-SRCS =  $(wildcard utils/*.cpp) prac.cpp
+SRCS =  $(wildcard utils/*.cpp) bt/root_given_node_path.cpp
 # Object files (automatically generated from .cpp files)
 OBJS = $(SRCS:.cpp=.o)
 
 # Executable name
 EXEC = a.out
-
 # Default rule (first target)
 all: $(EXEC)
 	./$(EXEC)
