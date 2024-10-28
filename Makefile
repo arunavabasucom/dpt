@@ -1,9 +1,11 @@
 #Compiler and compiler flags
-CXX = g++
+CXX = g++-14
 CXXFLAGS = -Wall -std=c++17 -Iheaders
 
 #Source files
-SRCS =  $(wildcard utils/*.cpp) bt/root_given_node_path.cpp
+# SRCS =  $(wildcard utils/*.cpp) prac.cpp 
+SRCS = prac.cpp
+
 # Object files (automatically generated from .cpp files)
 OBJS = $(SRCS:.cpp=.o)
 
