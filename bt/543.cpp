@@ -16,6 +16,10 @@ int diameterOfBinaryTree(TreeNode* root) {
     return diameter;
 }
 int main(){
-    
+    vector<int> arr = { 3,5,1,6,2,0,8,-1,-1,7,4 };
+    TreeNode* root = arrayToBinaryTree(arr, 0);
+    printBinaryTree(root);
+    cout << diameterOfBinaryTree(root);
+
     return 0;
 }

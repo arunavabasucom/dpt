@@ -1,7 +1,8 @@
-#include <stdc++.h>
-using namespace std;
+// #include <iostream>
+#include <bits/stdc++.h>
 
-int main(){
-    
+int main() {
     return 0;
 }
+
+

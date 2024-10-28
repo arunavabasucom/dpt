@@ -10,6 +10,9 @@ struct TreeNode {
   TreeNode(int x);
   TreeNode(int x, TreeNode* left, TreeNode* right);
 };
+TreeNode* arrayToBinaryTree(const std::vector<int>& arr, int index);
+void printBinaryTree(TreeNode* root, std::string indent = "", bool last = true);
+
 
 struct Node {
   int data;
