@@ -1,10 +1,8 @@
 ```bash
 #to run the file
-    make
-
+make
 #to lint
-        make lint 
-
+make lint 
 ```
 
 ``` .
