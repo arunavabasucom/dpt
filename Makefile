@@ -4,8 +4,7 @@ CXXFLAGS = -Wall -std=c++17 -Iheaders
 
 #Source files
 # SRCS =  $(wildcard utils/*.cpp) prac.cpp 
-SRCS = prac.cpp
-
+SRCS ?=gr/nearest_one_matrix.cpp
 # Object files (automatically generated from .cpp files)
 OBJS = $(SRCS:.cpp=.o)
 
