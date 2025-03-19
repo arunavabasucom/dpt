@@ -1,6 +1,6 @@
 #pragma once
 #include <bits/stdc++.h>
-
+using namespace std;
 
 struct TreeNode {
   int val;
@@ -10,9 +10,8 @@ struct TreeNode {
   TreeNode(int x);
   TreeNode(int x, TreeNode* left, TreeNode* right);
 };
-TreeNode* arrayToBinaryTree(const std::vector<int>& arr, int index);
-void printBinaryTree(TreeNode* root, std::string indent = "", bool last = true);
-
+TreeNode* arrayToBinaryTree(const vector<int>& arr, int index);
+// void printBinaryTree(TreeNode* root, string indent = "", bool last = true);
 
 struct Node {
   int data;
